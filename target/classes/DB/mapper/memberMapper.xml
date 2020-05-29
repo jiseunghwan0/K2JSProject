@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.k2js.p1.member.MemberDAO">
+
+	<select id="memberLogin" parameterType="memberVO"
+		resultType="memberVO">
+		SELECT * FROM MEMBER WHERE ID = #{id} AND PW = #{pw}
+	</select>
+	<insert id="memberNew" parameterType="memberVO">
+		INSERT INTO MEMBER VALUES
+		(#{id},#{pw},#{name},#{phone},#{email},#{birth},#{gender},0, 0, CAPALISTNUM_SEQ.nextval)
+	</insert>
+	<update id="memberUpdate" parameterType="memberVO">
+		UPDATE MEMBER SET
+		PW=#{pw}, NAME=#{name}, PHONE=#{phone},EMAIL=#{email} WHERE ID=#{id}
+	</update>
+	<insert id="memberKakaoNew" parameterType="memberVO">
+		INSERT INTO
+		KAKAOMEMBER VALUES (#{id}, #{name},#{phone},#{email}, #{birth},
+		#{gender}, 0, 1)
+	</insert>
+
+	<select id="memberKakaoLogin" parameterType="memberVO"
+		resultType="memberVO">
+		SELECT * FROM KAKAOMEMBER WHERE ID = #{id}
+	</select>
+	<delete id="memberDelete" parameterType="memberVO">
+		DELETE MEMBER WHERE ID =
+		#{id}
+	</delete>
+	<delete id="memberKakaoDelete" parameterType="memberVO">
+		DELETE KAKAOMEMBER
+		WHERE ID =#{id}
+	</delete>
+	<select id="memberFindId" parameterType="memberVO"
+		resultType="memberVO">
+		SELECT ID FROM MEMBER WHERE EMAIL = #{email} AND
+		NAME=#{name}
+	</select>
+	<select id="memberFindPw" parameterType="memberVO"
+		resultType="memberVO">
+		SELECT * FROM MEMBER WHERE ID=#{id} AND NAME=#{name} AND
+		PHONE = #{phone}
+	</select>
+	<update id="memberFindPwReset" parameterType="memberVO">
+		UPDATE MEMBER SET PW=#{pw} WHERE ID=#{id}
+	</update>
+	<select id="memberCapaList" parameterType="memberVO" resultType="matchForCapaVO">
+		SELECT * FROM matchforcapa WHERE CAPALISTNUM = #{capaListNum}
+	</select>
+	<select id="memberLastCapa" parameterType="matchForCapaVO" resultType="MatchVO">
+		SELECT * FROM MATCH WHERE NUM = #{num}
+	</select>
+	<select id="memberSearch" parameterType="memberVO" resultType="memberVO">
+		SELECT * FROM MEMBER WHERE ID=#{id}
+	</select>
+	<select id="memberEmailCheck" parameterType="String" resultType="memberVO">
+		SELECT * FROM MEMBER WHERE EMAIL=#{emailCk}
+	</select>
+</mapper>

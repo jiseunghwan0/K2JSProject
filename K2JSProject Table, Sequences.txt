@@ -1,0 +1,192 @@
+--------------------- TABLE  LIST ---------------------
+
+--------------------------------------------------------
+--  DDL for Table BOARDFILE
+--------------------------------------------------------
+
+CREATE TABLE BOARDFILE (
+FILENUM 	NUMBER 		PRIMARY KEY,
+NUM		NUMBER,
+FILENAME 	VARCHAR2(4000),
+ORINAME 	VARCHAR2(4000),
+BOARD 		NUMBER(2)
+);
+
+--------------------------------------------------------
+--  DDL for Table CHARGE
+--------------------------------------------------------
+
+CREATE TABLE CHARGE(
+CHARGENUM 	NUMBER 		PRIMARY KEY,
+ID 		VARCHAR2(100) 	NOT NULL,
+AMOUNT 	NUMBER	 	NOT NULL,
+CHARGEMETHOD 	NUMBER(2) 	NOT NULL,
+CHARGEDATE 	DATE 		NOT NULL
+) ;
+
+--------------------------------------------------------
+--  DDL for Table MEMBER
+--------------------------------------------------------
+
+CREATE TABLE MEMBER(
+ID      		VARCHAR2(100) 	PRIMARY KEY,
+PW      		VARCHAR2(100) 	NOT NULL,
+NAME   		VARCHAR2(100) 	NOT NULL,
+PHONE   		VARCHAR2(100) 	NOT NULL,
+EMAIL  		VARCHAR2(100) 	NOT NULL,
+BIRTH  		DATE,         
+GENDER 		NUMBER(1) 	NOT NULL,    
+CASH         	NUMBER,
+LOGINMT 	NUMBER(1) 	NOT NULL,
+CAPALISTNUM 	NUMBER
+);		
+
+--------------------------------------------------------
+--  DDL for Table KAKAOMEMBER
+--------------------------------------------------------
+
+CREATE TABLE KAKAOMEMBER (
+ID 		VARCHAR2(100)	 PRIMARY KEY,
+NAME 		VARCHAR2(100)	 NOT NULL,
+PHONE 		VARCHAR2(100)	 NOT NULL,
+EMAIL		 VARCHAR2(100),
+BIRTH 		DATE NOT	 NULL,
+GENDER 		NUMBER(1)	 NOT NULL,
+CASH 		NUMBER,
+LOGINMT		 NUMBER(1)	 NOT NULL
+);
+
+--------------------------------------------------------
+--  DDL for Table MANAGER
+--------------------------------------------------------
+
+CREATE TABLE MANAGER (
+NUM 		NUMBER		PRIMARY KEY,
+NAME		VARCHAR2(100)  	NOT NULL,
+GENDER 		NUMBER(1) 	NOT NULL,
+AGE 		NUMBER(3) 	NOT NULL,
+PHONE 		VARCHAR2(100) 	NOT NULL,
+HOME 		VARCHAR2(100) 	NOT NULL
+);
+
+--------------------------------------------------------
+--  DDL for Table MANAGERFILE
+--------------------------------------------------------
+
+CREATE TABLE MANAGERFILE(
+FILENUM 	NUMBER		PRIMARY KEY,
+NUM		NUMBER,
+FILENAME 	VARCHAR2(4000),
+ORINAME 	VARCHAR2(4000)
+);
+
+--------------------------------------------------------
+--  DDL for Table MATCH
+--------------------------------------------------------
+
+CREATE TABLE MATCH (
+NUM 		NUMBER 		PRIMARY KEY,
+TITLE 		VARCHAR2(200),
+CONTENTS 	CLOB,
+MATCHTIME 	DATE,
+STADIUMNAME 	VARCHAR2(200),
+COUNT		NUMBER,
+GENDER 		NUMBER(2),
+MANAGERNUM 	NUMBER
+);
+
+--------------------------------------------------------
+--  DDL for Table MATCHFORCAPA
+--------------------------------------------------------
+
+CREATE TABLE MATCHFORCAPA (
+NUM 		NUMBER 		NOT NULL,
+CAPALISTNUM 	NUMBER 		NOT NULL,
+COUNT 		NUMBER(2) 	NOT NULL,
+REQNUM 	NUMBER		PRIMARY KEY
+);
+
+--------------------------------------------------------
+--  DDL for Table STADIUMFILE
+--------------------------------------------------------
+
+CREATE TABLE STADIUMFILE (
+FILENUM 	NUMBER 		PRIMARY KEY,
+NUM 		NUMBER,
+FILENAME 	VARCHAR2(4000),
+ORINAME 	VARCHAR2(4000)
+);
+
+--------------------------------------------------------
+--  DDL for Table STADIUM
+--------------------------------------------------------
+
+CREATE TABLE STADIUM(
+NAME		VARCHAR2(200)		 PRIMARY KEY,
+ADDRESS		VARCHAR2(500),
+LOCATION_W 	NUMBER(12,8),
+LOCATION_K 	NUMBER(12,8),
+STADIUMSIZE 	VARCHAR2(100),
+SHOWER 	NUMBER(1),
+PARKING 	NUMBER(1),
+SHOES 		NUMBER(1),
+CLOTH 		NUMBER(1),
+INFO		CLOB
+);
+
+--------------------------------------------------------
+--  DDL for Table NOTICE
+--------------------------------------------------------
+
+CREATE TABLE NOTICE (
+NUM 		NUMBER 		PRIMARY KEY,
+TITLE 		VARCHAR2(2000)	NOT NULL,
+CONTENTS 	CLOB,
+WRITER 		VARCHAR2(100) 	NOT NULL,
+REGDATE 	DATE
+);
+
+--------------------------------------------------------
+--  DDL for Table QNA
+--------------------------------------------------------
+	
+CREATE TABLE QNA (
+NUM 		NUMBER 		PRIMARY KEY,
+TITLE		VARCHAR2(2000) 	NOT NULL,
+CONTENTS 	CLOB,
+QNANUM 	NUMBER 		NOT NULL,
+REF 		NUMBER,
+STEP 		NUMBER,
+DEPTH 		NUMBER,
+WRITER 		VARCHAR2(100) 	NOT NULL
+);
+
+--------------------------------------------------------
+--  DDL for Table TEAM
+--------------------------------------------------------
+
+CREATE TABLE TEAM(
+TEAMNAME	VARCHAR2(200)	PRIMARY KEY,
+WIN		NUMBER,
+DRAW		NUMBER,
+LOSE		NUMBER,
+GENDER		NUMBER(1),
+POINT		NUMBER
+);
+
+
+------------------ SEQUENCES  LIST ------------------
+
+
+--------------------------------------------------------
+--  DDL for SEQUENCES USER
+--------------------------------------------------------
+CREATE SEQUENCE BOARD_SEQ START WITH 1;
+CREATE SEQUENCE CAPALISTNUM_SEQ START WITH 1;
+CREATE SEQUENCE CHARGENUM_SEQ START WITH 1;
+CREATE SEQUENCE FILE_SEQ START WITH 1;
+CREATE SEQUENCE MANAGER_SEQ START WITH 1;
+CREATE SEQUENCE MATCH_SEQ START WITH 1;
+CREATE SEQUENCE REQNUM_SEQ START WITH 1;
+CREATE SEQUENCE STADIUMFILE_SEQ START WITH 1;
+
