@@ -296,7 +296,7 @@ form {
 
 
 	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c5126e0fcae8eba0e1ed7a9c58dc7812&libraries=services"></script>
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dc2a7e582e60c784f6479d29e736e6b5&libraries=services"></script>
 	<script>
 		var markers = [];
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 

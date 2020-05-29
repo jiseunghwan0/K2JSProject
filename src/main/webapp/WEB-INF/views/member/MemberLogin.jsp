@@ -134,7 +134,7 @@ body {
 					open("./forget/MemberFindPw", "_blank",
 							"width=500, height=600", true);
 				})
-		Kakao.init('c5126e0fcae8eba0e1ed7a9c58dc7812');
+		Kakao.init('762f01fe5e0b3f7cfa9a78ab68a7b07a');
 		Kakao.Auth.createLoginButton({
 			container : '#kakao-login-btn',
 			success : function(authObj) {

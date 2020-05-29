@@ -38,7 +38,7 @@ public class ChargeService {
 
 		// 서버로 요청할 Header
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("Authorization", "KakaoAK" + " 9cd9eafac1eac29eb3a3a8e894c16f31");
+		headers.add("Authorization", "KakaoAK" + " 14ebceb64d6687ad3c6d1a93cbd7d543");
 		headers.add("Accept", MediaType.APPLICATION_JSON_UTF8_VALUE);
 		headers.add("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
 
@@ -77,7 +77,7 @@ public class ChargeService {
 
 		// 서버로 요청할 Header
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("Authorization", "KakaoAK" + " 9cd9eafac1eac29eb3a3a8e894c16f31");
+		headers.add("Authorization", "KakaoAK" + " 14ebceb64d6687ad3c6d1a93cbd7d543");
 		headers.add("Accept", MediaType.APPLICATION_JSON_UTF8_VALUE);
 		headers.add("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
 
