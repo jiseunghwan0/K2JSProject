@@ -105,10 +105,10 @@ public class MemberController {
 		} else {
 			return "redirect:./MemberLogin";
 		}
-		if (Referer.equals("http://localhost:8080/p1/member/MemberNew")
-				|| Referer.equals("http://localhost:8080/p1/member/forget/MemberFindId")
-				|| Referer.equals("http://localhost:8080/p1/member/forget/MemberFindPw")
-				|| Referer.equals("http://localhost:8080/p1/member/forget/MemberFindId")) {
+		if (Referer.equals("http://localhost:8081	/p1/member/MemberNew")
+				|| Referer.equals("http://localhost:8081/p1/member/forget/MemberFindId")
+				|| Referer.equals("http://localhost:8081/p1/member/forget/MemberFindPw")
+				|| Referer.equals("http://localhost:8081/p1/member/forget/MemberFindId")) {
 			return "/";
 		}
 		return "redirect:" + Referer;

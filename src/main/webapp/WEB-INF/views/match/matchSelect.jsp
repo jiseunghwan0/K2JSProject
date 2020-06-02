@@ -523,7 +523,7 @@ img {
 
 
 	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c5126e0fcae8eba0e1ed7a9c58dc7812"></script>
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=762f01fe5e0b3f7cfa9a78ab68a7b07a"></script>
 	<script>
 		/* var location_w = "<c:out value='${stadiumVO.address}'/>";
 		var address = "<c:out value='${stadiumVO.address}'/>"; */
